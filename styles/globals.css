@@ -1,0 +1,140 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Purple Palette */
+  --color-lavender: #E8D5FF;
+  --color-digital-lavender: #C4A8FF;
+  --color-electric-purple: #9B4DFF;
+  --color-deep-grape: #4A0080;
+  --color-midnight: #1A0030;
+
+  /* Neutrals */
+  --color-cream: #FAF7FF;
+  --color-mist: #F0EBF8;
+  --color-stone: #6B5C7C;
+
+  /* Semantic */
+  --color-cta: var(--color-electric-purple);
+  --color-cta-hover: #7B2FE8;
+  --color-surface: rgba(255, 255, 255, 0.12);
+  --color-border: rgba(155, 77, 255, 0.2);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-glow: 0 0 40px rgba(155, 77, 255, 0.25);
+  --shadow-card: 0 8px 32px rgba(74, 0, 128, 0.12);
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.809 0.105 251.813);
+    --chart-2: oklch(0.623 0.214 259.815);
+    --chart-3: oklch(0.546 0.245 262.881);
+    --chart-4: oklch(0.488 0.243 264.376);
+    --chart-5: oklch(0.424 0.199 265.638);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+  }
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.809 0.105 251.813);
+    --chart-2: oklch(0.623 0.214 259.815);
+    --chart-3: oklch(0.546 0.245 262.881);
+    --chart-4: oklch(0.488 0.243 264.376);
+    --chart-5: oklch(0.424 0.199 265.638);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+  .theme {
+    --font-sans: var(--font-sans);
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-purple {
+    @apply bg-[#9B4DFF]/10 backdrop-blur-lg border border-[#9B4DFF]/20;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-[#9B4DFF] text-white rounded-full font-semibold transition-all hover:bg-[#7B2FE8] hover:shadow-[0_0_20px_rgba(155,77,255,0.4)] active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-white/10 text-white border border-white/20 rounded-full font-semibold transition-all hover:bg-white/20 active:scale-95;
+  }
+}
